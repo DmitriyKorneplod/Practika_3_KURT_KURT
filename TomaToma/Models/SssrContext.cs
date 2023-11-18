@@ -21,7 +21,7 @@ public partial class SssrContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("Server=192.168.2.108;User=root;Database=SSSR;");
+        => optionsBuilder.UseMySQL("Server =192.168.2.108;User=root;DataBase=SSSR");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,9 +32,12 @@ public partial class SssrContext : DbContext
             entity.ToTable("clients", "SSSR");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Clients)
+            entity.Property(e => e.Name)
                 .HasMaxLength(100)
-                .HasColumnName("clients");
+                .HasColumnName("name");
+            entity.Property(e => e.Surname)
+                .HasMaxLength(100)
+                .HasColumnName("surname");
         });
 
         modelBuilder.Entity<Service>(entity =>
@@ -44,9 +47,12 @@ public partial class SssrContext : DbContext
             entity.ToTable("services", "SSSR");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Services)
+            entity.Property(e => e.Name)
                 .HasMaxLength(100)
-                .HasColumnName("services");
+                .HasColumnName("name");
+            entity.Property(e => e.Price)
+                .HasMaxLength(100)
+                .HasColumnName("price");
         });
 
         OnModelCreatingPartial(modelBuilder);
