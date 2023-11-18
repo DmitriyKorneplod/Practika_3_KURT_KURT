@@ -19,35 +19,37 @@ namespace TomaToma.Controllers
             public IActionResult GetById(int id)
             {
                 var db = new SssrContext();
-                var clo = db.Clients.SingleOrDefault(s => s.Id == id);
-                if (clo == null)
+                var serv = db.Services.SingleOrDefault(s => s.Id == id);
+                if (serv == null)
                     return NotFound();
-                return Ok(clo);
+                return Ok(serv);
             }
             [HttpPost]
-            public IActionResult Add(Client client)
+            public IActionResult Add(Service service)
             {
                 var db = new SssrContext();
-                db.Clients.Add(client);
+                db.Services.Add(service);
                 db.SaveChanges();
-                return Ok(client);
+                return Ok(service);
             }
             [HttpPut]
-            public IActionResult Edit(Client clis)
+            public IActionResult Edit(Service service)
             {
                 var db = new SssrContext();
-                db.Clients.Update(clis);
+                db.Services.Update(service);
                 db.SaveChanges();
-                return Ok(clis);
+                return Ok(service);
             }
             [HttpDelete]
             public IActionResult Delete(int id)
             {
                 var db = new SssrContext();
-                var client = db.Clients.SingleOrDefault(s => s.Id == id);
-                if (client == null)
+                var servi = db.Services.SingleOrDefault(s => s.Id == id);
+                if (servi == null)
                     return NotFound();
-                return Ok(client);
+                db.Services.Remove(servi);
+                db.SaveChanges();
+                return Ok(servi);
             }
         
     }
