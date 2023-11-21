@@ -19,7 +19,7 @@ namespace TomaToma.Controllers
             public IActionResult GetById(int id)
             {
                 var db = new SssrContext();
-                var serv = db.Services.SingleOrDefault(s => s.Id == id);
+                var serv = db.Services.SingleOrDefault(s => s.id == id);
                 if (serv == null)
                     return NotFound();
                 return Ok(serv);
@@ -45,7 +45,7 @@ namespace TomaToma.Controllers
             public IActionResult Delete(int id)
             {
                 var db = new SssrContext();
-                var servi = db.Services.SingleOrDefault(s => s.Id == id);
+                var servi = db.Services.SingleOrDefault(s => s.id == id);
                 if (servi == null)
                     return NotFound();
                 db.Services.Remove(servi);

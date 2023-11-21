@@ -19,7 +19,7 @@ namespace TomaToma.Controllers
         public IActionResult GetById(int id)
         {
             var db = new SssrContext();
-            var clo = db.Clients.SingleOrDefault(s => s.Id == id);
+            var clo = db.Clients.SingleOrDefault(s => s.id == id);
             if (clo == null)
                 return NotFound();
             return Ok(clo);
@@ -45,7 +45,7 @@ namespace TomaToma.Controllers
         public IActionResult Delete(int id)
         {
             var db = new SssrContext();
-            var client = db.Clients.SingleOrDefault(s => s.Id == id);
+            var client = db.Clients.SingleOrDefault(s => s.id == id);
             if (client == null)
                 return NotFound();
             db.Clients.Remove(client);

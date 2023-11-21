@@ -65,7 +65,7 @@ namespace StomaTomaToma.ViewModels
         public async Task Delete()
         {
             if (SelectedClient == null) return;
-            var response = await client.DeleteAsync($"/clients/{SelectedClient.Id}");
+            var response = await client.DeleteAsync($"/clients/{SelectedClient.id}");
             if (!response.IsSuccessStatusCode)
             {
                 Message = "Ошибка удаления со стороны сервера";

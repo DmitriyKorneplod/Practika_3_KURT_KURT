@@ -5,9 +5,9 @@ namespace StomaTomaToma.Models;
 
 public partial class Client
 {
-    public int Id { get; set; }
+    public int id { get; set; }
 
-    public string? Surname { get; set; }
+    public string? surname { get; set; }
 
-    public string? Name { get; set; }
+    public string? name { get; set; }
 }

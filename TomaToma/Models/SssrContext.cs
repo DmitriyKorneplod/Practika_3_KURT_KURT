@@ -27,30 +27,30 @@ public partial class SssrContext : DbContext
     {
         modelBuilder.Entity<Client>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
+            entity.HasKey(e => e.id).HasName("PRIMARY");
 
             entity.ToTable("clients", "SSSR");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Name)
+            entity.Property(e => e.id).HasColumnName("id");
+            entity.Property(e => e.name)
                 .HasMaxLength(100)
                 .HasColumnName("name");
-            entity.Property(e => e.Surname)
+            entity.Property(e => e.surname)
                 .HasMaxLength(100)
                 .HasColumnName("surname");
         });
 
         modelBuilder.Entity<Service>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
+            entity.HasKey(e => e.id).HasName("PRIMARY");
 
             entity.ToTable("services", "SSSR");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Name)
+            entity.Property(e => e.id).HasColumnName("id");
+            entity.Property(e => e.name)
                 .HasMaxLength(100)
                 .HasColumnName("name");
-            entity.Property(e => e.Price)
+            entity.Property(e => e.price)
                 .HasMaxLength(100)
                 .HasColumnName("price");
         });
