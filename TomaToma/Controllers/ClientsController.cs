@@ -6,7 +6,6 @@ namespace TomaToma.Controllers
 {
     [ApiController]
     [Route("/clients")]
-    //11
     public class ClientsController : Controller
     {
         [HttpGet]
