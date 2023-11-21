@@ -9,6 +9,7 @@ namespace StomaTomaToma.ViewModels
             _StomatologiControl.DataContext = new StomatologiControlViewModel();
         }
         public StomaTomaControl _StomatologiControl { get; set;}
+        //1
     }
 }
     
