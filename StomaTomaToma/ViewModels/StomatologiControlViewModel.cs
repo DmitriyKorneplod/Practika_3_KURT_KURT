@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace StomaTomaToma.ViewModels
 {
+    //1111
     public class StomatologiControlViewModel : ViewModelBase
     {
         private Client _selectedClient;
