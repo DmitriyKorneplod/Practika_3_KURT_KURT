@@ -41,6 +41,7 @@ namespace TomaToma.Controllers
             return Ok(clis);
         }
         [HttpDelete]
+        [Route("{id}")]
         public IActionResult Delete(int id)
         {
             var db = new SssrContext();
