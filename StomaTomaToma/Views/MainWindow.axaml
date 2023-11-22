@@ -19,6 +19,7 @@
 			<UserControl Content="{Binding _StomatologiControl}"/>
 		</TabItem>
 		<TabItem Header="Услуги">
+			<UserControl Content="{Binding _ServiceControl}"/>
 
 		</TabItem>
 	</TabControl>
